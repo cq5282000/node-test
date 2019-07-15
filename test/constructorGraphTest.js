@@ -1,8 +1,15 @@
 const SymbolGraph = require('../src/SymbolGraph');
-const DirectedCycle = require('../src/DirectedCycle');
-const data = require('./data.json');
+const Topological = require('../src/Topological');
 
-const sg = new SymbolGraph(data);
-const dc = new DirectedCycle(sg.G);
+// 含有环的数据
+const data1 = require('./data1.json');
 
-console.log(dc.getCycle());
+// 不含有环的数据
+const data2 = require('./data2.json');
+
+const sg = new SymbolGraph(data2);
+
+// 不含有环的数据
+const tl = new Topological(sg.G);
+
+console.log(tl.getReversePost());
