@@ -9,7 +9,7 @@ module.exports = class DirectedCycle {
         this.edgeTo = [];
         // 有向环包含的节点
         this.cycle = [];
-        //  
+        // 是否在同一次深度优先遍历中遍历到连个相同的节点
         this.onStack = [];
 
         for(let v = 0; v < G.V; v ++) {
